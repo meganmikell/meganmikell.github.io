@@ -1,0 +1,197 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Scoops Ahoy! - Ice Cream Shop</title>
+    <link rel="icon" type="image/x-icon" href="media/favicon_io/favicon.ico">
+    <link rel="stylesheet" href="css/styles.css">
+    <link rel="stylesheet" href="css/formstyles.css">
+</head>
+<body>
+    <header>
+        <h1>Scoops Ahoy!</h1>
+        <p>The Sweetest Spot in Town</p>
+    </header>
+
+    <nav>
+        <ul>
+            <li><a href="#menu">Menu</a></li>
+            <li><a href="#specials">Specials</a></li>
+            <li><a href="contact.html">Contact</a></li>
+            <li><a href="form.html">Form</a></li>
+        </ul>
+    </nav>
+    <!-- 
+      The Form 
+      This section is visible by default.
+    -->
+    <section id="form-page" class="page-container">
+        <div class="card">
+            <h1>Event Registration</h1>
+            
+            <!-- Registration Form -->
+            <form id="contact-form">
+                <div class="form-content">
+                    
+                    <!-- Name Field -->
+                    <div class="form-group">
+                        <label for="name">Full Name</label>
+                        <input type="text" id="name" name="name" class="form-input" placeholder="Jane Doe" required>
+                    </div>
+
+                    <!-- Email Field -->
+                    <div class="form-group">
+                        <label for="email">Email Address</label>
+                        <input type="email" id="email" name="email" class="form-input" placeholder="you@example.com" required>
+                    </div>
+
+                    <!-- Event Type (for dynamic logic) -->
+                    <div class="form-group">
+                        <label for="event-type">Event Type</label>
+                        <select id="event-type" name="event-type" class="form-input">
+                            <option value="webinar">Online Webinar</option>
+                            <option value="workshop">In-Person Workshop</option>
+                            <option value="meetup">Community Meetup</option>
+                        </select>
+                    </div>
+
+                    <!-- Error Message Area -->
+                    <div id="error-message" class="hidden">
+                        <!-- Errors will be injected here by JavaScript -->
+                    </div>
+
+                    <!-- Submit Button -->
+                    <button type="submit" class="button button-primary">
+                        Register Now
+                    </button>
+                </div>
+            </form>
+        </div>
+    </section>
+
+    <!-- 
+      The "Thank You" Message 
+      This section is hidden by default and will be shown on success.
+    -->
+    <section id="thank-you-page" class="page-container hidden">
+        <div class="card card-centered">
+            <svg class="icon-success" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"></path></svg>
+            
+            <h1>Thank You!</h1>
+            
+            <p>
+                You've successfully registered for the <strong id="registered-event-name"></strong>.
+            </p>
+            
+            <!-- This message will be set by our if/else function -->
+            <p id="special-message"></p>
+
+            <button id="go-back-button" class="button button-secondary">
+                Register Again
+            </button>
+        </div>
+    </section>
+
+
+    <script>
+        // Wait for the document to be fully loaded before running scripts
+        document.addEventListener('DOMContentLoaded', () => {
+
+            // Get all necessary elements from the DOM
+            const form = document.getElementById('contact-form');
+            const formPage = document.getElementById('form-page');
+            const thankYouPage = document.getElementById('thank-you-page');
+            const goBackButton = document.getElementById('go-back-button');
+            const errorMessage = document.getElementById('error-message');
+
+           
+            form.addEventListener('submit', (event) => {
+                // Prevent the form from actually submitting (which reloads the page)
+                event.preventDefault();
+                handleFormSubmit();
+            });
+
+            goBackButton.addEventListener('click', () => {
+                showFormPage();
+            });
+
+            function handleFormSubmit() {
+                // Get values from the form
+                const nameInput = document.getElementById('name');
+                const emailInput = document.getElementById('email');
+                const eventSelect = document.getElementById('event-type');
+
+                // Clear any old errors
+                showError('');
+
+                if (!validateInput(nameInput.value, emailInput.value)) {
+                    // Stop if validation fails
+                    return;
+                }
+
+                const eventMessage = getSpecialEventMessage(eventSelect.value);
+
+                // Get the human-readable text from the selected option
+                const eventName = eventSelect.options[eventSelect.selectedIndex].text;
+                
+                // Set the dynamic content on the thank you page
+                document.getElementById('registered-event-name').textContent = eventName;
+                document.getElementById('special-message').textContent = eventMessage;
+
+                // Switch the "pages"
+                formPage.classList.add('hidden');
+                thankYouPage.classList.remove('hidden');
+            }
+
+            // Checks if the inputs are valid
+            function validateInput(name, email) {
+                if (name.trim() === '' || email.trim() === '') {
+                    showError('Please fill out both Name and Email fields.');
+                    return false;
+                }
+                // A simple check for email format
+                if (!email.includes('@') || !email.includes('.')) {
+                    showError('Please enter a valid email address.');
+                    return false;
+                }
+                return true;
+            }
+
+            // Provides a dynamic message based on the event type
+            function getSpecialEventMessage(eventType) {
+                if (eventType === 'workshop') {
+                    // Logic for the 'workshop' case
+                    return 'Great choice! Please remember to bring your laptop for the hands-on sessions.';
+                } else if (eventType === 'meetup') {
+                    // Logic for the 'meetup' case
+                    return 'We look forward to networking with you. Don\'t forget your business cards!';
+                } else {
+                    // Default logic for all other cases (like 'webinar')
+                    return 'A confirmation email with the event link will be sent to you shortly.';
+                }
+            }
+
+            // A helper function to display error messages
+            function showError(message) {
+                if (message) {
+                    errorMessage.textContent = message;
+                    errorMessage.classList.remove('hidden');
+                } else {
+                    // Hide the error message if the message is empty
+                    errorMessage.textContent = '';
+                    errorMessage.classList.add('hidden');
+                }
+            }
+            // Resets the view to the main form page
+            function showFormPage() {
+                thankYouPage.classList.add('hidden');
+                formPage.classList.remove('hidden');
+                
+                // Reset the form fields for a new entry
+                form.reset();
+            }
+        });
+    </script>
+</body>
+</html>
