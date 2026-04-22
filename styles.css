@@ -112,10 +112,10 @@ section h2 {
     color: #FF69B4; /* Hot Pink emphasis */
 }
 
-/* --- Footer (Grounded Color) --- */
+/* --- Footer --- */
 footer {
-    background-color: #4B2C20; /* Dark Chocolate Brown */
-    color: #FFD700; /* Yellow text */
+    background-color: var(--bgcolor);
+    color: var(--txtcolor);
     text-align: center;
     padding: 15px 0;
     font-size: 0.9em;
