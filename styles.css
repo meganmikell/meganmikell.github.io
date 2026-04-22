@@ -1,28 +1,26 @@
-/*
- * Ice Cream Shop Color Palette:
- * Pink: #FF69B4 (Hot Pink)
- * Mint: #B0E0E6 (Light Mint/Powder Blue)
- * Yellow: #FFD700 (Gold/Sunshine Yellow)
- * Blue: #87CEEB (Sky Blue)
- * Text: #4B2C20 (Chocolate Brown)
- */
+ :root { 
+    --bgcolor:#DCB8CB; 
+    --txtcolor:#000000; 
+    --secondary:#849481; 
+    --third: #cbc967; 
+    --fourth: #9c7dbd; 
 
+} 
 body {
     font-family: 'Arial', sans-serif;
     margin: 0;
     padding: 0;
-    /* Light, sweet background color */
-    background-color: #F0FFFF; /* Very pale/creamy white */
-    color: #4B2C20; /* Dark chocolate for text */
+    background-color: var(--fourth);
+    color: var(var(--txtcolor));
 }
 
-/* --- Header Section (Minty Fresh) --- */
+/* --- Header Section --- */
 header {
-    background-color: #B0E0E6; /* Mint Green */
+    background-color: var(--bgcolor);
     color: #4B2C20;
     padding: 20px 0;
     text-align: center;
-    border-bottom: 5px solid #FF69B4; /* Hot Pink separator */
+    border-bottom: 5px solid var(--bgcolor)
 }
 
 header h1 {
@@ -31,9 +29,9 @@ header h1 {
     letter-spacing: 2px;
 }
 
-/* --- Navigation (Pop of Pink) --- */
+/* --- Navigation --- */
 nav {
-    background-color: #FF69B4; /* Hot Pink */
+    background-color: var(--secondary);
     padding: 10px 0;
     text-align: center;
 }
@@ -51,7 +49,7 @@ nav ul li {
 }
 
 nav ul li a {
-    color: #F0FFFF; /* Creamy White text */
+    color: var(--txtcolor); 
     text-decoration: none;
     font-weight: bold;
     font-size: 1.2em;
@@ -59,7 +57,7 @@ nav ul li a {
 }
 
 nav ul li a:hover {
-    color: #FFD700; /* Sunshine Yellow hover effect */
+    color: var(--third); 
 }
 
 /* --- Main Content --- */
@@ -78,13 +76,12 @@ section {
 }
 
 section h2 {
-    color: #87CEEB; /* Sky Blue for section titles */
-    border-bottom: 3px dashed #FF69B4; /* Dashed Pink line */
+    color: var(--txtcolorrd); 
+    border-bottom: 3px dashed var(--txtcolor); 
     padding-bottom: 10px;
     margin-bottom: 20px;
 }
 
-/* --- Flavor List (Yellow Highlights) --- */
 .flavor-list {
     display: flex;
     flex-wrap: wrap;
@@ -93,13 +90,12 @@ section h2 {
 }
 
 .flavor {
-    background-color: #FFD700; /* Sunshine Yellow background */
+    background-color: var(--third);
     color: #4B2C20;
     padding: 10px 20px;
     border-radius: 25px;
     font-weight: bold;
     box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
-    /* Individual flavor-like colors could be added here for more variety */
 }
 
 /* --- Specials Section (Extra Pop) --- */
