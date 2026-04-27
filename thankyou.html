@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Thank You!</title>
+    <link rel="icon" type="image/x-icon" href="media/favicon_io/favicon.ico">
+    <link rel="stylesheet" href="css/thankyou.css">
+<!-- DON'T COPY/PASTE UPPER PART -->
+</head>
+<body>
+      <!-- 
+      The "Thank You" Message 
+      This section is hidden by default and will be shown on success.
+    -->
+    <section id="thank-you-page" class="page-container hidden">
+        <div class="card card-centered">
+            <svg class="icon-success" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"></path></svg>
+            
+            <h1>Thank You!</h1>
+            
+            <p>
+                You've successfully registered for the. <strong id="registered-event-name"></strong>
+            </p>
+            
+            <!-- This message will be set by our if/else function -->
+            <p id="special-message"></p>
+
+            <button id="go-back-button" class="button button-secondary">
+                <li><a href="contact.html">Register Again</a></li>
+            </button>
+        </div>
+    </section>
+
+</body>
+</html>

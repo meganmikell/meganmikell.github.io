@@ -1,0 +1,29 @@
+ :root { 
+    --bgcolor:#DCB8CB; 
+    --txtcolor:#000000; 
+    --secondary:#849481; 
+    --third: #cbc967; 
+    --fourth: #bfa8d8; 
+} 
+body {
+    font-family: 'Arial', sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: white;
+    color: var(--txtcolor);
+}
+
+header {
+    background-color: var(--bgcolor);
+    color: var(--txtcolor);
+    padding: 20px 0;
+    text-align:left;
+    border-bottom: 5px solid var(--bgcolor)
+}
+section {
+    background-color: white;
+    padding: 30px;
+    margin-bottom: 30px;
+    border-radius: 15px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
