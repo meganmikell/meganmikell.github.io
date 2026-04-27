@@ -1,9 +1,9 @@
-  :root { 
+ :root { 
     --bgcolor:#DCB8CB; 
     --txtcolor:#000000; 
     --secondary:#849481; 
-    --third: #cbc967; 
-    --fourth: #bfa8d8; 
+    --third: #cbc967;
+    --fourth: #cbabed;  
 } 
  .flex-container{
     display: flex;
