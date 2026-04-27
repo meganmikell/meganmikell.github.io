@@ -98,18 +98,18 @@ section h2 {
     box-shadow: 0 2px 4px #DCB8CB;
 }
 
-/* --- Specials Section (Extra Pop) --- */
+/* --- Daily Flowers (Extra Pop) --- */
 #specials p {
     font-size: 1.3em;
     text-align: center;
     padding: 15px;
-    background-color: #cbc967; /* Yellow background */
-    border: 4px solid #849481;
+    background-color: var(--third);
+    border: 3px solid var(--txtcolor);
     border-radius: 10px;
 }
 
 #specials strong {
-    color: #FF69B4; /* Hot Pink emphasis */
+    color: var(--txtcolor);
 }
 
 /* --- Footer --- */
