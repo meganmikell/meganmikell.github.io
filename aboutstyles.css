@@ -1,3 +1,10 @@
+  :root { 
+    --bgcolor:#DCB8CB; 
+    --txtcolor:#000000; 
+    --secondary:#849481; 
+    --third: #cbc967; 
+    --fourth: #bfa8d8; 
+} 
  .flex-container{
     display: flex;
     flex-wrap: wrap;
@@ -14,12 +21,12 @@
 
  .team-member-card {
    width: 250px;
-   border: 2px solid #333;
+   border: 2px solid var(--txtcolor);
    border-radius: 8px;
    padding: 10px;
    margin: 10px;
    text-align: center;
-   box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+   box-shadow: var(--txtcolor);
  }
 
  .team-member-card img {
