@@ -27,7 +27,7 @@ body {
 
 .page-container {
     width: 100%;
-    max-width: 42rem;
+    max-width: 100 rem;
 }
 
 .card {
