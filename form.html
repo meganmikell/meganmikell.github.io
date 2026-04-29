@@ -64,37 +64,12 @@
 
                     <!-- Submit Button -->
                     <button type="submit" class="button button-primary">
-                        Register Now
+                    <a href="thankyou.html" class="button button-primary">Register Now</a>
                     </button>
                 </div>
             </form>
         </div>
     </section>
-
-    <!-- 
-      The "Thank You" Message 
-      This section is hidden by default and will be shown on success.
-    -->
-    <section id="thank-you-page" class="page-container hidden">
-        <div class="card card-centered">
-            <svg class="icon-success" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"></path></svg>
-            
-            <h1>Thank You!</h1>
-            
-            <p>
-                You've successfully registered for the <strong id="registered-event-name"></strong>.
-            </p>
-            
-            <!-- This message will be set by our if/else function -->
-            <p id="special-message"></p>
-
-            <button id="go-back-button" class="button button-secondary">
-                Register Again
-            </button>
-        </div>
-    </section>
-
-
     <script>
         // Wait for the document to be fully loaded before running scripts
         document.addEventListener('DOMContentLoaded', () => {
