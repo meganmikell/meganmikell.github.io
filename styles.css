@@ -111,6 +111,16 @@ section h2 {
     color: var(--txtcolor);
 }
 
+/* --- Order Flowers (Extra Pop) --- */
+#order p {
+    font-size: 1.3em;
+    text-align: center;
+    padding: 15px;
+    background-color: var(--third);
+    border: 3px solid var(--txtcolor);
+    border-radius: 10px;
+}
+
 /* --- Footer --- */
 footer {
     background-color: var(--bgcolor);
