@@ -81,14 +81,14 @@ section h2 {
     margin-bottom: 20px;
 }
 
-.flavor-list {
+.flower-list {
     display: flex;
     flex-wrap: wrap;
     gap: 15px;
     justify-content: center;
 }
 
-.flavor {
+.flower {
     background-color: var(--third);
     color: #4B2C20;
     padding: 10px 20px;
